@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/add.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <ul>
+                <li>返回</li>
+                <li>发表帖子</li>
+                <li id="btn">发帖</li>
+            </ul>
+        </header>
+        <section>
+            <input type="text" placeholder="标题" id="title">
+            <textarea id="content" " cols="10 " rows="10 " maxlength="60 ">
+                
+            </textarea>
+        </section>
+    </div>
+    <script type="text/x-handlebars-template " id="sec-tpl "> 
+        {{#each this}}
+        <div class="main ">
+            <h3>{{title}}</h3>
+            <p>{{content}}</p>
+            <div class="user ">
+                <span class="name ">张三</span>
+                <span class="time ">2018-10-15</span>
+                <span>推荐</span>
+                <span class="num ">113</span>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script src="../js/libs/require.js "></script>
+    <script>
+        require(['../js/main.js'], function() {
+            require(['add'])
+        })
+    </script>
+</body>
+
+</html>
